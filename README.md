@@ -22,6 +22,5 @@ styleUrls: ['./app.component.css']
 
 Remove either of those and compilation finishes successfully.
 
-##System
-- Windows 7 x64 SP1
-- Node 5.10.1
+##Issue
+see https://github.com/angular/angular-cli/issues/3019
