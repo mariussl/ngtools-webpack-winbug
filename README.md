@@ -15,7 +15,7 @@ I tracked down the bug to the generation of **source-map** in combination with *
 devtool: '#source-map'
 ```
 
-[app.component.ts](app.component.ts)
+[src/app/app.component.ts](app.component.ts)
 ```
 styleUrls: ['./app.component.css']
 ```
