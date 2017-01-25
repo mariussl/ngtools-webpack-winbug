@@ -18,14 +18,14 @@ module.exports = {
    module: {
       rules: [
          { test: /\.ts$/, loaders: ['@ngtools/webpack'] },
-         { test: /\.css$/, loader: 'raw' },
-         { test: /\.html$/, loader: 'raw' }
+         { test: /\.css$/, loader: 'raw-loader' },
+         { test: /\.html$/, loader: 'raw-loader' }
       ]
    },
    plugins : [
       new AotPlugin({
          tsConfigPath: './tsconfig.json',
-         entryModule: 'src/app/app.module#AppModule'
+         entryModule: __dirname + 'src/app/app.module#AppModule'
       })
    ]
 };
