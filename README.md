@@ -2,25 +2,13 @@
 
 When using the ngtools/webpack package to generate a Angular2 AoT bundle the compilation process hangs infinitely on "95% emitting". This happens only on Windows 7 not on Linux.
 
+## Update, 2017-02-16
+Since [@ngtools/webpack 1.2.9](https://www.npmjs.com/package/@ngtools/webpack) which includes [this commit](https://github.com/angular/angular-cli/pull/4221) the bug is fixed. This repo is updated to use 1.2.9 so you can verify for yourself. 
+
 ##Usage
 - Clone Repository on Windows 7
 - npm install
 - npm start
-
-##Forensics
-I tracked down the bug to the generation of **source-map** in combination with **styleUrls** in a **Component**. 
-
-[webpack.config.js](webpack.config.js)
-```
-devtool: '#source-map'
-```
-
-[src/app/app.component.ts](app.component.ts)
-```
-styleUrls: ['./app.component.css']
-```
-
-Remove either of those and compilation finishes successfully.
 
 ##Issue
 see https://github.com/angular/angular-cli/issues/3019
